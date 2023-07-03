@@ -1,0 +1,44 @@
+function countVowels() 
+{
+    str=prompt("Enter a string")
+    const LStr = str.toLowerCase();
+    let vowelCount = 0;
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let char;
+    for (char of LStr) 
+    {
+      if (vowels.includes(char)) 
+      {
+        vowelCount++;
+      }
+    }
+    alert("Number of vowels in the string is "+vowelCount)
+}
+countVowels();
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter a string">
+    <button id="sortbutton">Sort</button>
+    <p>Sorted result <span id="result"></span></p>
+
+    <script>
+        function SortAutomatically()
+        {
+            const inputstring=document.getElementById('input').value;
+            const sortedstring= inputstring.split('').sort().join('');
+            document.getElementById('result').textContent=sortedstring;
+        }
+        document.getElementById('sortbutton').addEventListener('click',SortAutomatically);
+    </script>
+</body>
+</html>
