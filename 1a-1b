@@ -1,0 +1,16 @@
+let a=0;
+let b=0;
+a=parseInt(prompt("Enter 1st number"));
+b=parseInt(prompt("Enter 2nd number"));
+sum =a+b; 
+alert(sum);
+
+
+const reverseNumber = num => {
+    const reversedString = String(num).split('').reverse().join('');
+    return Number(reversedString);
+  };
+  
+  const givenNumber = 12243;
+  const reversedNumber = reverseNumber(givenNumber);
+  alert(reversedNumber);
