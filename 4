@@ -1,0 +1,28 @@
+function jumpSearch(key, list) {
+    var n = list.length;
+    var step = Math.floor(Math.sqrt(n));
+    var prev = 0;
+  
+    while (list[Math.min(step, n) - 1] < key) {
+      prev = step;
+      step += Math.floor(Math.sqrt(n));
+      if (prev >= n)
+        return -1;
+    }
+  
+    while (list[prev] < key) {
+      prev++;
+      if (prev == Math.min(step, n))
+        return -1;
+    }
+  
+    return (list[prev] == key) ? prev : -1;
+  }
+  
+  var key = prompt("Enter the key:");
+  var numbers = prompt("Enter the list of numbers (space-separated):").split(" ").map(Number);
+  
+  var result = jumpSearch(key, numbers);
+  
+  console.log(result != -1 ? "Success: Key found at index " + result : "Failure: Key not found in the list.");
+  
