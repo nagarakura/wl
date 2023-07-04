@@ -1,0 +1,13 @@
+//First we need to show Set deletes repeated values
+// Creating a Set with 100,000 unique values
+const mySet = new Set(Array.from({length: 100000}, (_, i) => i));
+// Creating an Array with 100,000 unique values
+const myArray = Array.from({length: 100000}, (_, i) => i);
+// Searching for a value in Set
+console.time("set-search");
+mySet.has(99999);
+console.timeEnd("set-search"); // Output: set-search: 0.033ms
+// Searching for a value in Array
+console.time("array-search");
+myArray.includes(99999);
+console.timeEnd("array-search"); // Output: array-search: 0.089ms
