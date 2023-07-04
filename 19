@@ -47,6 +47,42 @@
                 message.textContent = `Failed to get your location!`;
             }
         })();
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Navigator geolocation Property in HTML</title>
+	</head>
+
+<body>
+	<h2>Navigator geolocation Property</h2>
+	
+	<button ondblclick="getCoordinates()">Get Coordinates</button>
+	<p id="loc"></p>
+
+	<script>
+		var x = document.getElementById("loc");
+
+		function getCoordinates() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showcoordinates);
+			} else {
+				x.innerHTML = "The browser doesn't support Geolocation.";
+			}
+		}
+
+		function showcoordinates(myposition) {
+			x.innerHTML = "Your Latitude is: " + myposition.coords.latitude +
+				"<br>Your Longitude is: " + myposition.coords.longitude;
+		}
+	</script>
+</body>
+</html>
     </script>
 </body>
 
